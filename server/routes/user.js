@@ -8,7 +8,7 @@ const { auth } = require("../middleware/auth");
 const { User } = require("../models/user");
 
 ////
-router.post("/register", (req, res) => {
+router.post("/register",auth,(req, res) => {
   const user = new User(req.body);
 
   user.save((err, doc) => {
